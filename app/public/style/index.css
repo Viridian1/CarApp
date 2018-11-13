@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+*
+{   box-sizing: border-box;
+}
+
+:root
+{   --footer-bg-color: #4f4f4f;
+    --footer-color: black;
+}
+
+body
+{   background: url("../images/cars.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+header
+{   font-family: "Fredoka One", cursive;
+    font-size: 40px;
+    height: 30vh;
+    padding: 50px;
+    text-align: center;
+}
+
+.sign-in
+{   display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px auto;
+    max-width: 500px;
+    width: 96vw;
+}
+
+.signin-button
+{   border: 1px solid blue;
+    border-radius: 2px;
+    padding: 5px;
+    width: 45%;
+}
+
+/*                                      */
+/* style specific to messages           */
+/*                                      */
+
+#message-wrapper
+{   display: block;
+    position: fixed;
+    top: 30vh;
+    width: 100%;
+}
+
+.message-div
+{   background: #ffafaf;
+    border: 1px solid #ffafaf;
+    border-radius: 5px;
+    margin: 0px auto;
+    max-width: 500px;
+    padding: 40px;
+    width: 96vw;
+}
+
+/*                                      */
+/* style specific to sticky footer      */
+/*                                      */
+
+body, html
+{   height: 100%;
+}
+
+.wrapper
+{   margin-bottom: -40px;
+    min-height: 100%;
+}
+
+.push
+{   height: 40px;
+}
+
+footer
+{   background: var(--footer-bg-color);
+    color: var(--footer-color);
+    height: 40px;
+    padding: 10px;
+}
+
+/*                                      */
+/* media queries for responsive design  */
+/*                                      */
+
+@media screen and (max-width: 572px)
+{   main
+    {   padding: 5vh 0vw 5vh 0vw;
+    }
+
+    #results
+    {   flex-direction: column;
+    }
+
+    .selected-auto
+    {   margin-bottom: 10px;
+        /* min-width: 96vw; */
+        width: 96vw;
+    }
+}
