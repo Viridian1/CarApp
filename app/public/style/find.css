@@ -1,0 +1,158 @@
+*
+{   box-sizing: border-box;
+}
+
+:root
+{   --button-bg-color: #4f4fff;
+    --button-color: white;
+    --footer-bg-color: #4f4f4f;
+    --footer-color: black;
+}
+
+body
+{   background: url("../images/cars.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+header
+{
+    text-align: center;
+}
+
+.select-car
+{   margin: 0px auto;
+    max-width: 500px;
+    width: 90vw;
+}
+
+.select-wrapper
+{   display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.select-wrapper select
+{   border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    width: 30%;
+}
+
+button
+{   background: var(--button-bg-color);
+    border: 1px solid var(--button-bg-color);
+    border-radius: 5px;
+    color: var(--button-color);
+    margin: 5px;
+    padding: 5px;
+}
+
+button:hover
+{   background: var(--button-color);
+    border: 1px solid var(--button-bg-color);
+    border-radius: 5px;
+    color: var(--button-bg-color);
+    margin: 5px;
+    padding: 5px;
+}
+
+#compare-button
+{   display: none;
+}
+
+/*                                      */
+/* style for the results <div>          */
+/*                                      */
+
+#results
+{   display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px auto;
+    max-width: 500px;
+    width: 96vw;
+}
+
+.selected-auto
+{   background: #f8f8f8;
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-bottom: 1vh;
+    max-width: 500px;
+    padding: 5px;
+}
+
+.image-wrapper
+{   float: left;
+    height: 200px;
+    overflow: hidden;
+    width: 300px;
+}
+
+/*                                      */
+/* style specific to messages           */
+/*                                      */
+
+.message-wrapper
+{   display: none;
+    position: fixed;
+    top: 30vh;
+    width: 100%;
+}
+
+.message-div
+{   background: #ffafaf;
+    border: 1px solid #ffafaf;
+    border-radius: 5px;
+    margin: 0px auto;
+    max-width: 500px;
+    padding: 40px;
+    width: 96vw;
+}
+
+/*                                      */
+/* style specific to sticky footer      */
+/*                                      */
+
+body, html
+{   height: 100%;
+}
+
+.wrapper
+{   margin-bottom: -40px;
+    min-height: 100%;
+}
+
+.push
+{   height: 40px;
+}
+
+footer
+{   background: var(--footer-bg-color);
+    color: var(--footer-color);
+    height: 40px;
+    padding: 10px;
+}
+
+/*                                      */
+/* media queries for responsive design  */
+/*                                      */
+
+@media screen and (max-width: 572px)
+{   main
+    {   padding: 5vh 0vw 5vh 0vw;
+    }
+
+    #results
+    {   flex-direction: column;
+    }
+
+    .selected-auto
+    {   margin-bottom: 10px;
+        width: 96vw;
+    }
+}

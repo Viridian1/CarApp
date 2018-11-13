@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF=8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>Car Compare</title>
+
+        <link href="style/find.css" rel="stylesheet" type="text/css">
+        <style>
+        </style>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header>welcome to our app</header>
+
+            <main>
+                <div class="select-car">
+                    <p>Select a make/model (max of 5)</p>
+                    <div class="select-wrapper">
+                        <select id="model-make"></select>
+                        <select id="model-model"></select>
+                        <select id="model-year"></select>
+                    </div>
+
+                    <button id="compare-button" value="compare">Compare Selections</button><br>
+                    <p><a href="newcar.html">Can't find what you're looking for?</a></p>
+                </div>
+
+                <div id="results"></div>
+                <canvas id="compare"></canvas>
+            </main>
+            <div class="push"></div>
+        </div>
+
+        <footer>All Rights Reserved</footer>
+        <section class="message-wrapper">
+            <div class="message-div">
+                Is JavaScript disabled?  This application requires JavaScript to function.  Please enable it in your browser settings.  Thanks so much.
+            </div>
+        </section>
+    </body>
+
+    <!-- link to jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+    <script language="JavaScript" src="javascript/chart.js"></script>
+    <script language="JavaScript" src="javascript/find.js"></script>
+</html>
