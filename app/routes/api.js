@@ -48,14 +48,24 @@ router
 			response.status(200).json(data);
 	})
 })
-.get("/:make/:model/:year/:id", function(request, response)
+// .get("/:make/:model/:year/:id", function(request, response)
+// {
+// 	autos.getThisModel(request.params.id, function(status, data)
+.get("/getModel/:make/:model/:year", function(request, response)
 {
-	autos.getThisModel(request.params.id, function(status, data)
+	autos.getThisModel(request.params.make, request.params.model, request.params.year, function(status, data)
 	{
 		if (status != 200)
 			response.status(status).send(data);
 		else
 			response.status(200).json(data);
+	})
+})
+.post("/addModel", function(request, response)
+{   
+	autos.addThisModel(request.body, function(status, data)
+	{
+		response.end();
 	})
 })
 

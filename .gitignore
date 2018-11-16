@@ -2,3 +2,5 @@ node_modules
 dotenv
 .env
 package-lock.json
+app/data/schema.sql
+app/data/seeds.sql
