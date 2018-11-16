@@ -6,12 +6,11 @@ const connection = require("./connection.js");
 
 const orm =
 {   selectAllMakes: function (query, callback)
-    {   // generic function to handle all SELECT queries
+    {   // SELECT a unique list of manufacturere
 
         connection.query (query, function (error, results)
         {   if (error)
-            {   // console.log(error);
-                callback (500, "An unspecified error occured on the server.  Please contact " +
+            {   callback (500, "An unspecified error occured on the server.  Please contact " +
                                "your IT support staff.");
             }
             else
@@ -22,12 +21,11 @@ const orm =
     },
 
     selectAllModels: function (query, make, year, callback)
-    {   // generic function to handle all SELECT queries
+    {   // SELECT a unique list of all models available from a manufacturer
 
         connection.query (query, [make, year], function (error, results)
         {   if (error)
-            {   // console.log(error);
-                callback (500, "An unspecified error occured on the server.  Please contact " +
+            {   callback (500, "An unspecified error occured on the server.  Please contact " +
                                "your IT support staff.");
             }
             else
@@ -38,12 +36,11 @@ const orm =
     },
 
     selectAllYears: function (query, make, callback)
-    {   // generic function to handle all SELECT queries
+    {   // SELECT all available model years for the specified model
 
         connection.query (query, make, function (error, results)
         {   if (error)
-            {   // console.log(error);
-                callback (500, "An unspecified error occured on the server.  Please contact " +
+            {   callback (500, "An unspecified error occured on the server.  Please contact " +
                                "your IT support staff.");
             }
             else
@@ -54,11 +51,33 @@ const orm =
     },
 
     selectThisModel: function (query, id, callback)
-    {   // generic function to handle all SELECT queries
+    {   // SELECT all data for specific make, model and year
 
         connection.query (query, id, function (error, results)
         {   if (error)
-            {   // console.log(error);
+            {   callback (500, "An unspecified error occured on the server.  Please contact " +
+                               "your IT support staff.");
+            }
+            else
+            {
+                callback (200, results);
+            }
+        })
+    },
+
+    addThisModel: function (query, data, callback)
+    {   // INSERT a new record for the indicated make and model
+
+        const { Year, Make, Model, Engine_size_L_, Vehicle_Type, Horsepower, _of_Cylinders, Transmission, 
+                _of_Gears, Drive_System_Description, Equivalent_Test_Weight_lbs, Test_Fuel_Type_Cd, 
+                Test_Fuel_Type_Description, MPG } = data;
+        connection.query (query,
+        [   Year, Make, Model, Engine_size_L_, Vehicle_Type, Horsepower, _of_Cylinders, Transmission, 
+            _of_Gears, Drive_System_Description, Equivalent_Test_Weight_lbs, Test_Fuel_Type_Cd, 
+            Test_Fuel_Type_Description, MPG
+        ], function (error, results)
+        {   if (error)
+            {   
                 callback (500, "An unspecified error occured on the server.  Please contact " +
                                "your IT support staff.");
             }
@@ -68,7 +87,6 @@ const orm =
             }
         })
     }
-
 }
 
 module.exports = orm;

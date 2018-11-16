@@ -2,5 +2,5 @@ node_modules
 dotenv
 .env
 package-lock.json
-schema.sql
-seeds.sql
+app/data/schema.sql
+app/data/seeds.sql
