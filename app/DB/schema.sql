@@ -6,6 +6,7 @@ CREATE DATABASE CarsDB;
 /* CREATE TABLE */
 USE CarsDB;
 CREATE TABLE CarsDB(
+id INTEGER NOT NULL AUTO_INCREMENT, 
 Year DOUBLE,
 Make VARCHAR(100),
 Model VARCHAR(100),
@@ -19,7 +20,8 @@ Drive_System_Description VARCHAR(100),
 Equivalent_Test_Weight_lbs VARCHAR(100),
 Test_Fuel_Type_Cd DOUBLE,
 Test_Fuel_Type_Description DOUBLE,
-MPG VARCHAR(100)
+MPG VARCHAR(100),
+PRIMARY KEY (id)
 );
     
 USE CarsDB;
