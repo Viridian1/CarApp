@@ -46,11 +46,7 @@ header
 /* style specific to messages           */
 /*                                      */
 
-<<<<<<< HEAD
-#message-wrapper
-=======
 .message-wrapper
->>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
 {   display: block;
     position: fixed;
     top: 30vh;

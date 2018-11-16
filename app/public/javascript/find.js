@@ -225,21 +225,9 @@ function displayDetails(...selection)
                  })
             .addClass("image-wrapper")
 
-<<<<<<< HEAD
-        var remove = $("<button>");
-        remove
-            .addClass("remove-button")
-            .attr("value", 0)
-            .text("Remove Selection");
-
-        var textDiv = $("<div>");
-        textDiv
-            .addClass("text-wrapper")
-=======
         var selectDiv = $("<div>");
         selectDiv
             .addClass("selected-auto")
->>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
             .attr("value", selection[3])
             .html("<br>" +
                   car.year + " " +
@@ -249,24 +237,11 @@ function displayDetails(...selection)
                   "passengers: " + car.passengers + "<br>" +
                   "cargo capacity: " + car.cargo + "<br>" +
                   "towing capacity: " + car.tow + "<br>")
-<<<<<<< HEAD
-            .append(remove);
-
-        var selectedDiv = $("<div>");
-        selectedDiv
-            .addClass("selected-auto")
-            .append(imageDiv)
-            .append(textDiv)
-
-        $("#results")
-            .prepend(selectedDiv)
-=======
             .prepend(imageDiv)
             
 
         $("#results")
             .prepend(selectDiv)
->>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
 //     })
 
 }

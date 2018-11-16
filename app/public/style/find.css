@@ -1,19 +1,10 @@
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
-
-=======
->>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
 *
 {   box-sizing: border-box;
 }
 
 :root
 {   --button-bg-color: #4f4fff;
-<<<<<<< HEAD
-    --button-fg-color: white;
-=======
     --button-color: white;
->>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
     --footer-bg-color: #4f4f4f;
     --footer-color: black;
 }
@@ -28,20 +19,6 @@ body
 }
 
 header
-<<<<<<< HEAD
-{   font-family: "Fredoka One", cursive;
-    text-align: center;
-}
-
-/*                                      */
-/* style specific to model selector     */
-/*                                      */
-
-.select-car
-{   margin: 0px auto;
-    max-width: 500px;
-    width: 96vw;
-=======
 {
     text-align: center;
 }
@@ -50,105 +27,31 @@ header
 {   margin: 0px auto;
     max-width: 500px;
     width: 90vw;
->>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
 }
 
 .select-wrapper
 {   display: flex;
     flex-direction: row;
-<<<<<<< HEAD
-    flex-wrap: nowrap;
-=======
->>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
     justify-content: space-between;
 }
 
 .select-wrapper select
 {   border: 1px solid black;
     border-radius: 5px;
-<<<<<<< HEAD
-    margin-bottom: 10px;
-    padding: 5px;
-    width: 31%;
-}
-
-/*                                      */
-/* style for results                    */
-/*                                      */
-
-#results
-{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 0px auto;
-    max-width: 750px;
-    width: 96px;
-}
-
-.selected-auto
-{   background: #efefef;
-    border: 1px solid black;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    /* margin: 0px auto; */
-    margin-bottom: 1vh;
-    /* max-width: 750px; */
-    padding: 5px;
-    /* width: 96vw; */
-    width: 100%;
-}
-
-.image-wrapper
-{   
-    flex-grow: 0;
-    /* float: left; */
-    height: 300px;
-    width: 300px;
-}
-
-.text-wrapper
-{   
-    flex-grow: 1;
-    /* float: left; */
-    margin-left: 5px;
-}
-
-/*                                      */
-/* style for miscellaneous elements     */
-/*                                      */
-
-=======
     padding: 5px;
     width: 30%;
 }
 
->>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
 button
 {   background: var(--button-bg-color);
     border: 1px solid var(--button-bg-color);
     border-radius: 5px;
-<<<<<<< HEAD
-    color: var(--button-fg-color);
-    display: none;
-=======
     color: var(--button-color);
     margin: 5px;
->>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
     padding: 5px;
 }
 
 button:hover
-<<<<<<< HEAD
-{   background: var(--button-fg-color);
-    color: var(--button-bg-color);
-}
-
-/*                                      */
-/* style specific to messages           */
-=======
 {   background: var(--button-color);
     border: 1px solid var(--button-bg-color);
     border-radius: 5px;
@@ -163,29 +66,17 @@ button:hover
 
 /*                                      */
 /* style for the results <div>          */
->>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
 /*                                      */
 
 #results
 {   display: flex;
-<<<<<<< HEAD
-    flex-direction: row;
-=======
     flex-direction: column;
->>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
     justify-content: center;
     margin: 0px auto;
     max-width: 500px;
     width: 96vw;
 }
 
-<<<<<<< HEAD
-.signin-button
-{   border: 1px solid blue;
-    border-radius: 2px;
-    padding: 5px;
-    width: 45%;
-=======
 .selected-auto
 {   background: #f8f8f8;
     border: 1px solid black;
@@ -200,7 +91,6 @@ button:hover
     height: 200px;
     overflow: hidden;
     width: 300px;
->>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
 }
 
 /*                                      */
@@ -263,10 +153,6 @@ footer
 
     .selected-auto
     {   margin-bottom: 10px;
-<<<<<<< HEAD
-        /* min-width: 96vw; */
-=======
->>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
         width: 96vw;
     }
 }
