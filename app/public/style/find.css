@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 
+=======
+>>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
 *
 {   box-sizing: border-box;
 }
 
 :root
 {   --button-bg-color: #4f4fff;
+<<<<<<< HEAD
     --button-fg-color: white;
+=======
+    --button-color: white;
+>>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
     --footer-bg-color: #4f4f4f;
     --footer-color: black;
 }
@@ -21,6 +28,7 @@ body
 }
 
 header
+<<<<<<< HEAD
 {   font-family: "Fredoka One", cursive;
     text-align: center;
 }
@@ -33,18 +41,32 @@ header
 {   margin: 0px auto;
     max-width: 500px;
     width: 96vw;
+=======
+{
+    text-align: center;
+}
+
+.select-car
+{   margin: 0px auto;
+    max-width: 500px;
+    width: 90vw;
+>>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
 }
 
 .select-wrapper
 {   display: flex;
     flex-direction: row;
+<<<<<<< HEAD
     flex-wrap: nowrap;
+=======
+>>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
     justify-content: space-between;
 }
 
 .select-wrapper select
 {   border: 1px solid black;
     border-radius: 5px;
+<<<<<<< HEAD
     margin-bottom: 10px;
     padding: 5px;
     width: 31%;
@@ -98,38 +120,87 @@ header
 /* style for miscellaneous elements     */
 /*                                      */
 
+=======
+    padding: 5px;
+    width: 30%;
+}
+
+>>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
 button
 {   background: var(--button-bg-color);
     border: 1px solid var(--button-bg-color);
     border-radius: 5px;
+<<<<<<< HEAD
     color: var(--button-fg-color);
     display: none;
+=======
+    color: var(--button-color);
+    margin: 5px;
+>>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
     padding: 5px;
 }
 
 button:hover
+<<<<<<< HEAD
 {   background: var(--button-fg-color);
     color: var(--button-bg-color);
 }
 
 /*                                      */
 /* style specific to messages           */
+=======
+{   background: var(--button-color);
+    border: 1px solid var(--button-bg-color);
+    border-radius: 5px;
+    color: var(--button-bg-color);
+    margin: 5px;
+    padding: 5px;
+}
+
+#compare-button
+{   display: none;
+}
+
+/*                                      */
+/* style for the results <div>          */
+>>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
 /*                                      */
 
 #results
 {   display: flex;
+<<<<<<< HEAD
     flex-direction: row;
+=======
+    flex-direction: column;
+>>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
     justify-content: center;
     margin: 0px auto;
     max-width: 500px;
     width: 96vw;
 }
 
+<<<<<<< HEAD
 .signin-button
 {   border: 1px solid blue;
     border-radius: 2px;
     padding: 5px;
     width: 45%;
+=======
+.selected-auto
+{   background: #f8f8f8;
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-bottom: 1vh;
+    max-width: 500px;
+    padding: 5px;
+}
+
+.image-wrapper
+{   float: left;
+    height: 200px;
+    overflow: hidden;
+    width: 300px;
+>>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
 }
 
 /*                                      */
@@ -192,7 +263,10 @@ footer
 
     .selected-auto
     {   margin-bottom: 10px;
+<<<<<<< HEAD
         /* min-width: 96vw; */
+=======
+>>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
         width: 96vw;
     }
 }

@@ -1,4 +1,5 @@
 $(document).ready(function()
+<<<<<<< HEAD
 {   $("#message-wrapper").css("display", "none");
     
     $(".signin-button").click(function(event)
@@ -12,6 +13,13 @@ $(document).ready(function()
         {
         }
 
+=======
+{   $(".message-wrapper").css("display", "none");
+
+    $(".signin-button").click(function(event)
+    {
+        event.preventDefault();
+>>>>>>> 70caee38df1a03766b904eaced45ba4a4aa91a77
         window.open("find.html", "_self");
     })
 
