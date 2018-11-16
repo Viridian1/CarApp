@@ -12,5 +12,5 @@ app.use('/', htmlRoutes);
 
 app.listen(PORT, function()
 {
-  console.log("KennelLog listening on :", PORT);
+  console.log("CarsDB listening on :", PORT);
 });
