@@ -3,13 +3,19 @@
 const chalk = require("chalk");
 const mysql = require("mysql");
 
-const connection = mysql.createConnection(
-{   server:     "localhost",
-    port:       3306,
-    user:       "root",
-    password:   "root",
-    database:   "CarsDB"    
-});
+if (process.env.JAWSDB_URL)
+{   connection = mysql.createConnection(process.env.JAWSDB_URL);
+}
+else
+{
+    const connection = mysql.createConnection(
+    {   server:     "localhost",
+        port:       3306,
+        user:       "root",
+        password:   "root",
+        database:   "CarsDB"    
+    });
+}
 
 connection.connect (function (error)
 {   // Connect to the MySQL database
