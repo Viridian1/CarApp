@@ -31,6 +31,12 @@ header {
 .wrapper h1 {
     color: #fff;
     float: left;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
 }
 
 .container {
@@ -198,8 +204,8 @@ button {
 }
 
 @media screen and (max-width: 800px) {
-    html {
-        background: url('images/videobgposter.png') #000 no-repeat center center fixed;
+    .body {
+        background: url('../images/videobgposter.png') #000 no-repeat center center fixed;
     }
 
     #bgvid {
@@ -248,6 +254,8 @@ li:last-child {
     color: #333;
     text-align: center;
     cursor: pointer;
+    margin-top: 0px;
+    padding-top: 15px;
 }
 
 li.active .button {
