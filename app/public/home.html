@@ -5,10 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
     <title>Car Compare</title>
 
     <link href="style/styles.css" rel="stylesheet" type="text/css">
 </head>
+
+<style>
+    .intro-text {
+        max-width: 800px;
+        display: block;
+        margin: 0 auto;
+        padding-top: 40px;
+    }
+
+    .selection {
+        display: block;
+        margin: 0 auto;
+        border: 1px solid #333;
+        border-radius: 3px;
+        max-width: 900px;
+        margin-top: 40px;
+        padding: 40px;
+    }
+
+    .select-button {
+        text-decoration: none;
+        display: block;
+        margin: 0 auto;
+        max-width: 300px;
+        text-align: center;
+        background: #A32362;
+        color: #fff;
+        border-radius: 3px;
+        padding: 20px;
+    }
+
+    .select-button:last-child {
+        margin-top: 40px;
+    }
+</style>
 
 <body>
     <header>
@@ -16,15 +53,24 @@
             <span><img src="images/car.png">
                 <h1>OTTO</h1>
             </span>
+            <span style="float:right; padding-top:22px;color:#fff;cursor: pointer;"><i class="fas fa-2x fa-user-astronaut"></i>
+                <i class="fas fa-1x fa-angle-down"></i></span>
         </div>
     </header>
 
     <div class="wrapper">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+            ut aliquip ex
             ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
             fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.</p>
+            mollit anim id est laborum.
+        </p>
+
+        <div class="selection">
+            <a class="select-button" href="">Find a car</a>
+            <a class="select-button" href="">Compare two cars</a>
+        </div>
     </div>
 </body>
 
