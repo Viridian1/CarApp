@@ -1,37 +1,306 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <meta charset="UTF=8">
-        <meta name="viewport"
-              content="width=device-width, initial-scale=1.0">
-        <title>Car Compare</title>
 
-        <link href="style/index.css" rel="stylesheet" type="text/css">
-        <style>
-        </style>
-    </head>
-
-    <body>
-        <div class="wrapper">
-            <header class="index-header">Car Compare</header>
-            <main>
-                <div class="sign-in">
-                    <button class="signin-button" id="Google-button">Sign in with Google</button>
-                    <button class="signin-button" id="Facebook-button">Sign in with Facebook</button>
-                </div>
-            </main>
-            <div class="push"></div>
-        </div>
-        <footer>All Rights Reserved</footer>
-        <section class="message-wrapper">
-            <div class="message-div">
-                Is JavaScript disabled?  This application requires JavaScript to function.  Please enable it in your browser settings.  Thanks so much.
-            </div>
-        </section>
-    </body>
-
-    <!-- link to jQuery-->
+<head>
+    <meta charset="UTF=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script language="JavaScript" src="/javascript/index.js">
+    <title>Splash</title>
+
+    <!-- <link href="style/index.css" rel="stylesheet" type="text/css"> -->
+
+    <style>
+        body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+        video { 
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translateX(-50%) translateY(-50%);
+            background: url('images/videobgposter.png') no-repeat;
+            background-size: cover;
+            transition: 1s opacity;
+        }
+
+        .video-wrapper{
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.192);
+            z-index: 2;
+        }
+
+        header{
+            height: 80px;
+            background: #0097CF;
+            z-index: 5;
+        }
+
+        .wrapper{
+            max-width: 1300px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .wrapper img{
+            width: 60px;
+            padding-top:10px;
+            float: left;
+            padding-right: 10px;
+        }
+
+        .wrapper h1 {
+            color: #fff;
+            float: left;
+        }
+
+        .container{
+        width: 600px;
+        height: 350px;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        display: inline-flex; 
+        }
+
+        .backbox{  
+        background-color: #404040;
+        width: 100%;
+        height: 80%;
+        position: absolute;
+        transform: translate(0,-50%);
+        top:50%;
+        display: inline-flex;
+        }
+
+        .frontbox{
+        background-color: white;
+        border-radius: 20px;
+        height: 100%;
+        width: 50%;
+        z-index: 10;
+        position: absolute;
+        right:0;
+        margin-right: 3%;
+        margin-left: 3%;
+        transition: right .8s ease-in-out;
+        }
+
+        .moving{
+        right:45%;
+        }
+
+        .loginMsg, .signupMsg{
+        width: 50%;
+        height: 100%;
+        font-size: 15px;
+        box-sizing: border-box;
+        }
+
+        .loginMsg .title,
+        .signupMsg .title{
+        font-weight: 300;
+        font-size: 23px;
+        }
+
+        .loginMsg p,
+        .signupMsg p {
+        font-weight: 100;
+        }
+
+        .textcontent{
+        color:white;
+        margin-top:65px;
+        margin-left: 12%;
+        }
+
+        .loginMsg button,
+        .signupMsg button {
+        background-color: #404040;
+        border: 2px solid white;
+        border-radius: 10px;
+        color:white;
+        font-size: 12px;
+        box-sizing: content-box;
+        font-weight: 300;
+        padding:10px;
+        margin-top: 20px;
+        }
+
+        /* front box content*/
+        .login, .signup{
+        padding: 20px;
+        text-align: center;
+        }
+
+        .login h2,
+        .signup h2 {
+        color: #0097CF;
+        font-size:22px;
+        }
+
+        .inputbox{
+        margin-top:30px; 
+        }
+        .login input, 
+        .signup input {
+        display: block;
+        width: 100%;
+        height: 40px;
+        background-color: #f2f2f2;
+        border: none;
+        margin-bottom:20px;
+        font-size: 12px;
+        }
+
+        .login button,
+        .signup button{
+        background-color: #0097CF;
+        border: none;
+        color:white;
+        font-size: 12px;
+        font-weight: 300;
+        box-sizing: content-box;
+        padding:10px;
+        border-radius: 10px;
+        width: 60px;
+        position: absolute;
+        right:30px;
+        bottom: 30px;
+        cursor: pointer;
+        }
+
+        /* Fade In & Out*/
+        .login p {
+        cursor: pointer;
+        color:#404040;
+        font-size:15px;
+        }
+
+        .loginMsg, .signupMsg{
+        /*opacity: 1;*/
+        transition: opacity .8s ease-in-out;
+        }
+
+        .visibility{
+        opacity: 0;
+        }
+
+        .hide{
+        display: none;
+        }
+        @media screen and (max-width: 800px) {
+        html { 
+            background: url('images/videobgposter.png') #000 no-repeat center center fixed; 
+            }
+        #bgvid {
+            display: none;
+            }
+        }
+        </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <span><img src="images/car.png">
+                <h1>OTTO</h1>
+            </span>
+        </div>
+    </header>
+
+    <div>
+        <div class="container">
+            <div class="backbox">
+                <div class="loginMsg">
+                    <div class="textcontent">
+                        <p class="title">Don't have an account?</p>
+                        <p>Sign up to save all your graph.</p>
+                        <button id="switch1">Sign Up</button>
+                    </div>
+                </div>
+                <div class="signupMsg visibility">
+                    <div class="textcontent">
+                        <p class="title">Have an account?</p>
+                        <p>Log in to see all your collection.</p>
+                        <button id="switch2">LOG IN</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="frontbox">
+                <div class="login">
+                    <h2>LOG IN</h2>
+                    <div class="inputbox">
+                        <input type="text" name="email" placeholder="  EMAIL">
+                        <input type="password" name="password" placeholder="  PASSWORD">
+                    </div>
+                    <p>FORGET PASSWORD?</p>
+                    <button>LOG IN</button>
+                </div>
+
+                <div class="signup hide">
+                    <h2>SIGN UP</h2>
+                    <div class="inputbox">
+                        <input type="text" name="fullname" placeholder="  FULLNAME">
+                        <input type="text" name="email" placeholder="  EMAIL">
+                        <input type="password" name="password" placeholder="  PASSWORD">
+                    </div>
+                    <button>SIGN UP</button>
+                </div>
+
+            </div>
+            <!-- frontbox -->
+        </div>
+    </div>
+
+    <div class="video-wrapper">
+        <video poster="images/videobgposter.png" id="bgvid" playsinline autoplay muted loop>
+            <source src="images/carmonumentvalley.webm" type="video/webm">
+            <source src="images/carmonumentvalley.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <script type="text/javascript">
+        var $loginMsg = $('.loginMsg'),
+            $login = $('.login'),
+            $signupMsg = $('.signupMsg'),
+            $signup = $('.signup'),
+            $frontbox = $('.frontbox');
+
+        $('#switch1').on('click', function () {
+            $loginMsg.toggleClass("visibility");
+            $frontbox.addClass("moving");
+            $signupMsg.toggleClass("visibility");
+
+            $signup.toggleClass('hide');
+            $login.toggleClass('hide');
+        })
+
+        $('#switch2').on('click', function () {
+            $loginMsg.toggleClass("visibility");
+            $frontbox.removeClass("moving");
+            $signupMsg.toggleClass("visibility");
+
+            $signup.toggleClass('hide');
+            $login.toggleClass('hide');
+        })
+
+        setTimeout(function () {
+            $('#switch1').click()
+        }, 1000)
+
+        setTimeout(function () {
+            $('#switch2').click()
+        }, 3000)
     </script>
+</body>
+
 </html>
