@@ -9,6 +9,221 @@
 
     <link href="style/styles.css" rel="stylesheet" type="text/css">
 
+    <style>
+        body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+        video { 
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translateX(-50%) translateY(-50%);
+            background: url('images/videobgposter.png') no-repeat;
+            background-size: cover;
+            transition: 1s opacity;
+        }
+
+        .video-wrapper{
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.192);
+            z-index: 2;
+        }
+
+        header{
+            height: 80px;
+            background: #0097CF;
+            z-index: 5;
+        }
+
+        .wrapper{
+            max-width: 1300px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .wrapper img{
+            width: 60px;
+            padding-top:10px;
+            float: left;
+            padding-right: 10px;
+        }
+
+        .wrapper h1 {
+            color: #fff;
+            float: left;
+        }
+
+        .container{
+        width: 600px;
+        height: 350px;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        display: inline-flex; 
+        }
+
+        .backbox{  
+        background-color: #404040;
+        width: 100%;
+        height: 80%;
+        position: absolute;
+        transform: translate(0,-50%);
+        top:50%;
+        display: inline-flex;
+        }
+
+        .frontbox{
+        background-color: white;
+        border-radius: 20px;
+        height: 100%;
+        width: 50%;
+        z-index: 10;
+        position: absolute;
+        right:0;
+        margin-right: 3%;
+        margin-left: 3%;
+        transition: right .8s ease-in-out;
+        }
+
+        .moving{
+        right:45%;
+        }
+
+        .loginMsg, .signupMsg{
+        width: 50%;
+        height: 100%;
+        font-size: 15px;
+        box-sizing: border-box;
+        }
+
+        .loginMsg .title,
+        .signupMsg .title{
+        font-weight: 300;
+        font-size: 23px;
+        }
+
+        .loginMsg p,
+        .signupMsg p {
+        font-weight: 100;
+        }
+
+        .textcontent{
+        color:white;
+        margin-top:65px;
+        margin-left: 12%;
+        }
+
+        .loginMsg button,
+        .signupMsg button {
+        background-color: #404040;
+        border: 2px solid white;
+        border-radius: 10px;
+        color:white;
+        font-size: 12px;
+        box-sizing: content-box;
+        font-weight: 300;
+        padding:10px;
+        margin-top: 20px;
+        }
+
+        /* front box content*/
+        .login, .signup{
+        padding: 20px;
+        text-align: center;
+        }
+
+        .login h2,
+        .signup h2 {
+        color: #0097CF;
+        font-size:22px;
+        }
+
+        .inputbox{
+        margin-top:30px; 
+        }
+        .login input, 
+        .signup input {
+        display: block;
+        width: 100%;
+        height: 40px;
+        background-color: #f2f2f2;
+        border: none;
+        margin-bottom:20px;
+        font-size: 12px;
+        }
+
+        .login button,
+        .signup button{
+        background-color: #0097CF;
+        border: none;
+        color:white;
+        font-size: 12px;
+        font-weight: 300;
+        box-sizing: content-box;
+        padding:10px;
+        border-radius: 10px;
+        width: 60px;
+        position: absolute;
+        right:30px;
+        bottom: 30px;
+        cursor: pointer;
+        }
+
+        /* Fade In & Out*/
+        .login p {
+        cursor: pointer;
+        color:#404040;
+        font-size:15px;
+        }
+
+        .loginMsg, .signupMsg{
+        transition: opacity .8s ease-in-out;
+        }
+
+        .visibility{
+        opacity: 0;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .hide{
+        display: none;
+        }
+        @media screen and (max-width: 800px) {
+        html { 
+            background: url('images/videobgposter.png') #000 no-repeat center center fixed; 
+            }
+        #bgvid {
+            display: none;
+            }
+        }
+
+        #error-wrapper
+        {   display: none;
+            bottom: 10vh;
+            position: fixed;
+            width: 100vw;
+        }
+
+        #error-div
+        {   background: white;
+            border: 1px solid black;
+            margin: 0px auto;
+            padding: 20px;
+            text-align: center;
+            width: 75vw;
+        }
+        </style>
 </head>
 
 <body>
@@ -43,21 +258,21 @@
                 <div class="login">
                     <h2>LOG IN</h2>
                     <div class="inputbox">
-                        <input type="text" name="email" placeholder="  EMAIL">
-                        <input type="password" name="password" placeholder="  PASSWORD">
+                        <input id="login-email" type="text" name="email" placeholder="  EMAIL">
+                        <input id="login-password" type="password" name="password" placeholder="  PASSWORD">
                     </div>
                     <p>FORGET PASSWORD?</p>
-                    <button>LOG IN</button>
+                    <button id="login">LOG IN</button>
                 </div>
 
                 <div class="signup hide">
                     <h2>SIGN UP</h2>
                     <div class="inputbox">
-                        <input type="text" name="fullname" placeholder="  FULLNAME">
-                        <input type="text" name="email" placeholder="  EMAIL">
-                        <input type="password" name="password" placeholder="  PASSWORD">
+                        <input id="signup-name" type="text" name="fullname" placeholder="  FULLNAME">
+                        <input id="signup-email" type="text" name="email" placeholder="  EMAIL">
+                        <input id="signup-password" type="password" name="password" placeholder="  PASSWORD">
                     </div>
-                    <button>SIGN UP</button>
+                    <button id="signin">SIGN UP</button>
                 </div>
             </div>
         </div>
@@ -70,6 +285,9 @@
         </video>
     </div>
 
+    <div id="error-wrapper">
+        <div id="error-div"></div>
+    </div>
     <script type="text/javascript">
         var $loginMsg = $('.loginMsg'),
             $login = $('.login'),
@@ -102,6 +320,53 @@
         setTimeout(function () {
             $('#switch2').click()
         }, 3000)
+
+        $("#login").click(function(event)
+        {   event.preventDefault();
+
+            $.post("/api/login",
+            {   email: $("#login-email").val().trim(),
+                password: $("#login-password").val().trim()
+            })
+            .then (function(response)
+            {
+                window.open("/find.html", "_self");
+            })
+            .catch (function (error)
+            {
+                $("#error-div").empty()
+                $("#error-div").text("Your used ID or password was incorrect.  Try again.");
+
+                $("#error-wrapper").css("display", "block");
+
+            })
+        })
+
+        $("#signin").click(function(event)
+        {   event.preventDefault();
+
+            // var data =
+            // {   name:  $("#signup-name").val().trim(),
+            //     email:  $("#signup-email").val().trim(),
+            //     password: $("#signup-password").val().trim()
+            // }
+
+            $.post("/api/signup", 
+            {   name:  $("#signup-name").val().trim(),
+                email:  $("#signup-email").val().trim(),
+                password: $("#signup-password").val().trim()
+            })
+            .then (function(response)
+            {
+                window.open("/find.html", "_self");
+            })
+            .catch (function (error)
+            {   $("#error-div").empty()
+                $("#error-div").text("An error occured");
+
+                $("#error-wrapper").css("display", "block");
+            })
+        })
     </script>
 </body>
 
