@@ -8,169 +8,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Compare</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        span {
-            font-weight: normal;
-        }
-
-        section {
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-            height: 1000px;
-            position: relative;
-        }
-
-        ul {
-            display: flex;
-            top: 0px;
-            z-index: 10;
-            margin-bottom: 0px;
-            padding-left: 0px;
-        }
-
-        li {
-            list-style: none;
-            flex: 1;
-        }
-
-        li:last-child {
-            border-right: 1px solid #DDD;
-        }
-
-        .button {
-            width: 100%;
-            border: 1px solid #DDD;
-            border-right: 0;
-            border-top: 0;
-            padding: 10px;
-            background: #FFF;
-            font-weight: bold;
-            height: 60px;
-            color: #333;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        li.active .button {
-            background: #f1f1f1;
-            color: #333;
-        }
-
-        li:not(.active) .button:hover{
-            background: #f5f5f5;
-        }
-
-        table {
-            border-collapse: collapse;
-            table-layout: fixed;
-            width: 100%;
-        }
-
-        th {
-            background: #F5F5F5;
-            display: none;
-        }
-
-        .label{
-            background: #F5F5F5;
-            font-weight: bold;
-        }
-
-        .unused-cell{
-            background-color: #0097CF;
-            color: #fff;
-            text-align: center;
-        }
-
-        td,
-        th {
-            height: 53px
-        }
-
-        td,
-        th {
-            border: 1px solid #DDD;
-            padding: 10px;
-            empty-cells: show;
-        }
-
-        td,
-        th {
-            text-align: left;
-        }
-
-        td+td,
-        th+th {
-            text-align: center;
-            display: none;
-        }
-
-        td.default {
-            display: table-cell;
-        }
-
-        .bg-purple {
-            border-top: 3px solid #A32362;
-        }
-
-        .bg-blue {
-            border-top: 3px solid #0097CF;
-        }
-
-        .tick {
-            font-size: 18px;
-            color: #2CA01C;
-        }
-
-        @media screen and (min-width: 640px) {
-            ul {
-                display: none;
-            }
-
-            td,
-            th {
-                display: table-cell !important;
-            }
-
-            td,
-            th {
-                width: 330px;
-
-            }
-
-            td+td,
-            th+th {
-                width: auto;
-            }
-            td{
-                text-align: center;
-            }
-        }
-    </style>
+    <link href="style/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+    <header>
+        <div class="wrapper">
+            <span><img src="images/car.png">
+                <h1>OTTO</h1>
+            </span>
+        </div>
+    </header>
+
+    <p>&nbsp;</p>
+
     <div class="wrapper">
-
-        <p>&nbsp;</p>
         <section>
-
             <ul>
                 <li class="bg-blue active">
                     <h3 class="button"><span id="year">Year</span> <span id="make">Make</span> <span id="model">Model</span></h3>
-                </li>   
+                </li>
                 <li class="bg-purple">
                     <h3 class="button"><span id="year2">Year</span> <span id="make2">Make</span> <span id="model2">Model</span></h3>
                 </li>
@@ -206,7 +63,8 @@
                     <tr>
                         <td class="label">Engine:</td>
 
-                        <td class="default"><span class="tick">&#10004;</span> <span id="liters">#of liters</span> <span id="cylinders"># of cylinders</span></td>
+                        <td class="default"><span class="tick">&#10004;</span> <span id="liters">#of liters</span>
+                            <span id="cylinders"># of cylinders</span></td>
 
                         <td><span id="liters2">#of liters</span> <span id="cylinders2"># of cylinders</span></td>
                     </tr>
@@ -227,9 +85,11 @@
                     <tr>
                         <td class="label">Drivetrain:</td>
 
-                        <td class="default"><span class="tick">&#10004;</span> <span id="drivesystem">DriveSystem</span> <span id="gears">#of gears (speed)</span> <span id="trans">Transmission</span></td>
+                        <td class="default"><span class="tick">&#10004;</span> <span id="drivesystem">DriveSystem</span>
+                            <span id="gears">#of gears (speed)</span> <span id="trans">Transmission</span></td>
 
-                        <td><span id="drivesystem2">DriveSystem</span> <span id="gears2">#of gears (speed)</span> <span id="trans2">Transmission</span></td>
+                        <td><span id="drivesystem2">DriveSystem</span> <span id="gears2">#of gears (speed)</span> <span
+                                id="trans2">Transmission</span></td>
                     </tr>
                     <tr>
                         <td class="label">Weight:</td>
