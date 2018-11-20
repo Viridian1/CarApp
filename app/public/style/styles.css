@@ -360,11 +360,11 @@ td.default {
     padding-top:20px;
 }
 .intro-text {
-    max-width: 800px;
+    max-width: 840px;
     display: block;
     margin: 0 auto;
-    padding-top: 20px;
     font-size: 18px;
+    padding: 20px
 }
 
 .selection {
