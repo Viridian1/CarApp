@@ -12,7 +12,7 @@ else
 {
     connection = mysql.createConnection(
     {   server:     "localhost",
-        port:       3306,
+        port:       8889,
         user:       "root",
         password:   "root",
         database:   "loginDB"    

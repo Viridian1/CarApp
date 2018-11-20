@@ -8,7 +8,7 @@ const autos =
     getAllMakes: function (callback)
     {   // Retrieve a list of all auto manufacturers in the database
 
-        query = "select make from CarsDB group by make;"
+        query = "select make from Cars group by make;"
         orm.selectAllMakes (query, function (status, data)
         {
             callback (status, data);
@@ -18,7 +18,7 @@ const autos =
     getAllModels: function (make, year, callback)
     {   // Retrieve a list of all model available from a manufacturer
 
-        query = "select model from CarsDB where make=? and year=? group by model;"
+        query = "select model from Cars where make=? and year=? group by model;"
         orm.selectAllModels (query, make, year, function (status, data)
         {
             callback (status, data);
@@ -28,7 +28,7 @@ const autos =
     getAllYears: function (make, callback)
     {   // Retrieve a list of available model years for the model
 
-        query = "select model, year from CarsDB where make=?;"
+        query = "select model, year from Cars where make=?;"
         orm.selectAllYears (query, make, function (status, data)
         {
             callback (status, data);
@@ -38,7 +38,7 @@ const autos =
     getThisModel: function (id, callback)
     {   // Retrieve all data for the model year...identified by make, model and year
 
-        query = "select * from CarsDB where id=?;"
+        query = "select * from Cars where id=?;"
         orm.selectThisModel (query, id, function (status, data)
         {
             callback (status, data);
@@ -62,7 +62,7 @@ const autos =
         if (!inputData.Test_Fuel_Type_Description) inputData.Test_Fuel_Type_Description = "null"
         if (!inputData.MPG) inputData.MPG = "null"
 
-        query = "insert into CarsDB (Year, Make, Model, Engine_size_L_, Vehicle_Type, Horsepower, " +
+        query = "insert into Cars (Year, Make, Model, Engine_size_L_, Vehicle_Type, Horsepower, " +
                                     "_of_Cylinders, Transmission, _of_Gears, Drive_System_Description, " +
                                     "Equivalent_Test_Weight_lbs, Test_Fuel_Type_Cd, " +
                                     "Test_Fuel_Type_Description, MPG) " +

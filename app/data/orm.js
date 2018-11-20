@@ -12,6 +12,7 @@ const orm =
         {   if (error)
             {   callback (500, "An unspecified error occured on the server.  Please contact " +
                                "your IT support staff.");
+                               console.log(error)
             }
             else
             {

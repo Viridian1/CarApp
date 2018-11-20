@@ -97,7 +97,7 @@ router
 			}
 			else
 			{
-				response.redirect("/find.html");
+				response.redirect("/home.html");
 			}
 		})
 	}
@@ -131,7 +131,7 @@ router
 			}
 			else
 			{
-				response.redirect("/find.html");
+				response.redirect("/home.html");
 			}
 		})
 	}
