@@ -12,9 +12,9 @@ Once logged in you can click on Find car and select the Year, Make, and Model of
 
 
 ## Otto uses:
-1.Express
-1.mySql
-1.Chalk
+ - Express
+ - mySql
+ - Handlebars
 
 ## Authors
 
