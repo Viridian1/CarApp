@@ -5,6 +5,16 @@ const orm = require("../data/orm.js");
 
 const autos =
 {
+    getAll: function (callback)
+    {   // Retrieve a list of all auto manufacturers in the database
+
+        query = "select * from Cars"
+        orm.selectAllMakes (query, function (status, data)
+        {
+            callback (status, data);
+        })
+    },
+    
     getAllMakes: function (callback)
     {   // Retrieve a list of all auto manufacturers in the database
 
@@ -35,11 +45,11 @@ const autos =
         })
     },
 
-    getThisModel: function (id, callback)
+    getThisModel: function (make, model, year, callback)
     {   // Retrieve all data for the model year...identified by make, model and year
 
-        query = "select * from Cars where id=?;"
-        orm.selectThisModel (query, id, function (status, data)
+        query = "select * from Cars where make=? and model=? and year=?;"
+        orm.selectThisModel (query, make, model, year, function (status, data)
         {
             callback (status, data);
         })

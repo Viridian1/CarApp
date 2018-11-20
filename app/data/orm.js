@@ -5,7 +5,23 @@ const chalk = require("chalk");
 const connection = require("./connection.js");
 
 const orm =
-{   selectAllMakes: function (query, callback)
+{   selectAll: function (query, callback)
+    {   // SELECT a unique list of manufacturere
+
+        connection.query (query, function (error, results)
+        {   if (error)
+            {   callback (500, "An unspecified error occured on the server.  Please contact " +
+                               "your IT support staff.");
+                               console.log(error)
+            }
+            else
+            {
+                callback (200, results);
+            }
+        })
+    },
+
+    selectAllMakes: function (query, callback)
     {   // SELECT a unique list of manufacturere
 
         connection.query (query, function (error, results)
@@ -51,10 +67,10 @@ const orm =
         })
     },
 
-    selectThisModel: function (query, id, callback)
+    selectThisModel: function (query, make, model, year, callback)
     {   // SELECT all data for specific make, model and year
 
-        connection.query (query, id, function (error, results)
+        connection.query (query, [make, model, year], function (error, results)
         {   if (error)
             {   callback (500, "An unspecified error occured on the server.  Please contact " +
                                "your IT support staff.");

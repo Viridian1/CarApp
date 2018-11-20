@@ -17,6 +17,18 @@ router
 
 	next();
 })
+.get("/all", function(request, response)
+{	// Get all manufacturers
+
+	autos.getAll(function(status, data)
+	{
+		if (status != 200)
+			response.status(status).send(data);
+		else
+			response.status(200).json(data);
+	})
+
+})
 .get("/allmakes", function(request, response)
 {	// Get all manufacturers
 
